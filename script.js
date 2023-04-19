@@ -24,6 +24,8 @@ function generatePassword() {
   var noTypeSelected = "";
 
   //Password If statements for password conditions
+
+  // Is there a way to use if else statement for all these?
   if (passwordLength<8 || passwordLength>128) {
     alert("Must be 8-128 characters");
     return wrongConditions;
