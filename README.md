@@ -5,8 +5,8 @@ Challenge-3
 ![My Image](images/../pwgenerator.png)
 
 
-Link To live website:
- 
+Link To live website: https://joshualam071522.github.io/challenge-3/
+
 Description
 
 The purpose of this project was to build a random password generator when given starter code. By expanding on the code given to me in this project, I will be able to apply some of the core principles of Javascript that I learned in the bootcamp. By applying these principles, I will also be able to get more used to the logic of how Javascript works compared to CSS and HTML. To achieve these goals, I worked soley on the Javascript code given to me. One of the main functions I used was if statements. I spent multiple hours trying to decide whether to use one big if else statement, or multiple if statements. I eventually decided on the latter, as I was unable to do the former. I also stored most of my work in the the function generatePassword, and created multiple arrays to create a bank of characters to use for the random password generator. Although I was stumped at first, I realized the string method concat was perfect for this project. I was only able to realize it when I looked back at the notes where it was previously mentioned. The for loop function also took a while to create, but breaking down the function using pseudocoding helped a good amount.  Throughout the project, I was able to reinforce my knowledge on basic Javascript principles and understand using outside learning resources to achieve my goal.
