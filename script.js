@@ -65,7 +65,7 @@ function generatePassword() {
 
   // Presents the generated password to be used in the function writePassword
   return password;
-  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
