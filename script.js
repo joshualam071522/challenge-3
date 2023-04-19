@@ -17,10 +17,22 @@ function generatePassword() {
   //Blank array added inside function so array does not infinitely concat arrays if generate password function is called multiple times
   var alphabetBlank = [];
 
+  // variable to return if password length does not meet requirements
+  var wrongConditions = "";
+  
+  // variable to return if none of the password types are selected
+  var noTypeSelected = "";
+
   //Password If statements for password conditions
   if (passwordLength<8 || passwordLength>128) {
     alert("Must be 8-128 characters");
+    return wrongConditions;
   };
+
+  if (!passwordUpperCase && !passwordLowerCase && !passwordNumeric && !passwordNumeric) {
+    alert("Must at least pick one type");
+    return noTypeSelected;
+  }
 
   if (passwordUpperCase) {
     var alphabetBlank = alphabetBlank.concat(alphabetUpperCase);
