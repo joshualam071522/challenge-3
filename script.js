@@ -35,20 +35,21 @@ function generatePassword() {
   if (passwordSpecial) {
     var alphabetBlank = alphabetBlank.concat(alphabetSpecial);
   };
-  // test array length in console
-  // console.log(alphabetBlank);
 
-  // empty password
-  var generatedPassword = "";
+  // empty password for for Loop
+  var password = "";
 
   for (var i = 0; i < passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * alphabetBlank.length);
     var randomCharacter = alphabetBlank[randomNumber];
-    var generatedPassword = generatedPassword + randomCharacter;
+    var password = password + randomCharacter;
     
   };
     //For Loop test
-  console.log(generatedPassword);
+  console.log(password);
+
+  //presents the generated password to be used in the function writePassword
+  return password;
   }
 
 // Get references to the #generate element
