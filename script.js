@@ -10,18 +10,26 @@ function generatePassword() {
 
   //Password Character Conditions
   var passwordLength = prompt("How Many characters in your password?", 8);
-  if (passwordLength<8) {
-    alert("Must be at least 8 characters");
-    return;
-  } else if (passwordLength >= 8 && passwordLength <= 128) {
-  var passwordUpperCase = confirm("Click OK to include upper case characters");
-  var passwordLowerCase = confirm("Click OK to include lower case characters");
-  var passwordNumeric = confirm("Click OK to include numeric characters");
-  var passwordSpecial = confirm("Click OK to include special characters");
-  } else {
-    alert("Cannot be more than 128 characters");
-    return; 
-  }
+  if (passwordLength<8 || passwordLength>128) {
+    alert("Must be 8-128 characters");
+
+  } else (passwordLength >= 8 && passwordLength <= 128)
+
+    if (confirm("Click OK to include upper case characters")) {
+      alphabetBlank = alphabetBlank.concat(alphabetUpperCase);
+    };
+  
+    if (confirm("Click OK to include lower case characters")) {
+      alphabetBlank == alphabetBlank.concat(alphabetLowerCase);
+    };
+  
+    if (confirm("Click OK to include numeric characters")) {
+      alphabetBlank == alphabetBlank.concat(alphabetNumeric);
+    };
+  
+    if (confirm("Click OK to include special characters")) {
+      alphabetBlank = alphabetBlank.concat(alphabetSpecial);
+    };
 };
 
 // Get references to the #generate element
