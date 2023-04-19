@@ -1,4 +1,4 @@
-// Assignment code here
+// Arrays to create a bank of characters to use for the random password generator
 var alphabetUpperCase = ['A', 'B', 'C', 'E', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 var alphabetLowerCase = ['a', 'b', 'c', 'e', 'd', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var alphabetNumeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',];
@@ -11,11 +11,13 @@ function generatePassword() {
   var passwordLength = prompt("How Many characters in your password?", 8);
   var passwordUpperCase = confirm("Press OK to include Upper Case letters");
   var passwordLowerCase = confirm("Press OK to include Lower Case letters");
-  var passwordNumeric = confirm("Press OK to incluide Numeric Letters");
+  var passwordNumeric = confirm("Press OK to include Numeric Letters");
   var passwordSpecial = confirm("Press OK to include Special letters");
+
+  //Blank array added inside function so array does not infinitely concat arrays if generate password function is called multiple times
   var alphabetBlank = [];
 
-  //Password If statements
+  //Password If statements for password conditions
   if (passwordLength<8 || passwordLength>128) {
     alert("Must be 8-128 characters");
   };
@@ -36,19 +38,18 @@ function generatePassword() {
     var alphabetBlank = alphabetBlank.concat(alphabetSpecial);
   };
 
-  // empty password for for Loop
+  // Empty password variable for the for Loop function
   var password = "";
 
+  // For Loop function to generate the password
   for (var i = 0; i < passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * alphabetBlank.length);
     var randomCharacter = alphabetBlank[randomNumber];
     var password = password + randomCharacter;
     
   };
-    //For Loop test
-  console.log(password);
 
-  //presents the generated password to be used in the function writePassword
+  // Presents the generated password to be used in the function writePassword
   return password;
   }
 
