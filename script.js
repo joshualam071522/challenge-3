@@ -8,29 +8,37 @@ var alphabetSpecial = [ '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '
 
 function generatePassword() {
 
-  //Password Character Conditions
+  //Password Prompts
   var passwordLength = prompt("How Many characters in your password?", 8);
+  var passwordUpperCase = confirm("Press OK to include Upper Case letters");
+  var passwordLowerCase = confirm("Press OK to include Lower Case letters");
+  var passwordNumeric = confirm("Press OK to incluide Numeric Letters");
+  var passwordSpecial = confirm("Press OK to include Special letters");
+  var alphabetBlank = [];
+
+  //Password If statements
   if (passwordLength<8 || passwordLength>128) {
     alert("Must be 8-128 characters");
+  };
 
-  } else (passwordLength >= 8 && passwordLength <= 128)
+  if (passwordUpperCase) {
+    var alphabetBlank = alphabetBlank.concat(alphabetUpperCase);
+  };
 
-    if (confirm("Click OK to include upper case characters")) {
-      alphabetBlank = alphabetBlank.concat(alphabetUpperCase);
-    };
-  
-    if (confirm("Click OK to include lower case characters")) {
-      alphabetBlank == alphabetBlank.concat(alphabetLowerCase);
-    };
-  
-    if (confirm("Click OK to include numeric characters")) {
-      alphabetBlank == alphabetBlank.concat(alphabetNumeric);
-    };
-  
-    if (confirm("Click OK to include special characters")) {
-      alphabetBlank = alphabetBlank.concat(alphabetSpecial);
-    };
-};
+  if (passwordLowerCase) {
+    var alphabetBlank = alphabetBlank.concat(alphabetLowerCase);
+  };
+
+  if (passwordNumeric) {
+    var alphabetBlank = alphabetBlank.concat(alphabetNumeric);
+  };
+
+  if (passwordSpecial) {
+    var alphabetBlank = alphabetBlank.concat(alphabetSpecial);
+  };
+
+  console.log(alphabetBlank);
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
